@@ -4,7 +4,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login-component">
-        Login
+        Login form example displaying validation and motion.
       </div>
     );
   }

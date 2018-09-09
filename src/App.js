@@ -12,11 +12,13 @@ export default class App extends Component {
     return (
       <Router>
         <div>
+          <span role="debug"></span>
           <AppBar/>
-          
-          <Route exact path="/" component={Login} />
-          <Route path="/dragging" component={Dragging} />
-          <Route path="/cart" component={Cart} />
+          <div className="container">
+            <Route exact path="/" component={Login} />
+            <Route path="/dragging" component={Dragging} />
+            <Route path="/cart" component={Cart} />
+          </div>
         </div>
       </Router>
     )
