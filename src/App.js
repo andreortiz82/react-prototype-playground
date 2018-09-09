@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import AppBar from './components/AppBar/AppBar'
 
 import Cart from './components/Cart'
 import Dragging from './components/Dragging'
@@ -10,10 +12,8 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <Link to="/">Login</Link>
-          <Link to="/dragging">Dragging</Link>
-          <Link to="/cart">Cart</Link>
-          <hr />
+          <AppBar/>
+          
           <Route exact path="/" component={Login} />
           <Route path="/dragging" component={Dragging} />
           <Route path="/cart" component={Cart} />
