@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import AppBar from './components/AppBar/AppBar'
 
-import Cart from './components/Cart'
-import Dragging from './components/Dragging'
-import Login from './components/Login'
+import Cart from './components/Cart/Cart'
+import Dragging from './components/DragDrop/DragDrop'
+import Login from './components/Login/Login'
 
 export default class App extends Component {
   render() {

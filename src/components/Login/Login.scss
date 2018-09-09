@@ -1,0 +1,55 @@
+@import "../utils/scss/variables";
+@import "../utils/scss/mixins";
+
+#login-component {
+
+  .login-form {
+    width: 50%;
+    background: $light;
+    padding: rem(20);
+    margin: auto;
+    border-bottom: 1px solid $grey;
+
+    &.success {
+      background: $green;
+    }
+    &.error {
+      background: $red;
+    }
+  }
+
+  form {
+    .field {
+      margin-bottom: rem(20);
+      
+      label {
+        display: block;
+        margin-bottom: rem(10);
+        font-size: rem(14);
+        color: $navy;
+      }
+
+      input {
+        text-indent: rem(10);
+        border: none;
+        height: rem(40);
+        outline: none;
+        width: 100%;
+      }
+    }
+
+    .actions {
+      text-align: center;
+      button {
+        cursor: pointer;
+        background: $navy;
+        outline: none;
+        padding: rem(10) rem(20);
+        border: none;
+        color: $white;
+        font-weight: bold;
+        font-size: rem(16);
+      }
+    }
+  }
+}
