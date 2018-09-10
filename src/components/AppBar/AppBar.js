@@ -8,7 +8,7 @@ export default class AppBar extends React.Component {
   render() {
     return (
       <div id="appbar-component">
-        <img src={logo}/>
+        <img src={logo} alt="logo"/>
         <h1>React Prototype Playground</h1>
         <Link to="/">Login</Link>
         <Link to="/dragging">Dragging</Link>

@@ -1,4 +1,4 @@
-$shadow-default: 0 10px 30px 0 rgba(#a21f1f, 0.5);
+$shadow-default: 0 2px 5px 0 rgba($dark, 0.3);
 @mixin shadow($options: $shadow-default) {
   box-shadow:$options;
   -webkit-box-shadow:$options;

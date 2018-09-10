@@ -1,20 +1,37 @@
 @import "../utils/scss/variables";
 @import "../utils/scss/mixins";
 
+@keyframes error-shake {
+  from, to {
+    transform: rotate(0);
+  }
+  20% { transform: rotate(5deg); }
+  40% { transform: rotate(-5deg); }
+  60% { transform: rotate(5deg); }
+  80% { transform: rotate(-5deg); }
+}
+
 #login-component {
 
   .login-form {
-    width: 50%;
-    background: $light;
-    padding: rem(20);
+    @include shadow;
+    width: rem(300);
+    background: $white;
+    padding: rem(40);
     margin: auto;
-    border-bottom: 1px solid $grey;
+    
+    h1,p {
+      margin: 0 0 rem(20) 0;
+    }
 
     &.success {
       background: $green;
+      animation: error-shake 0.5s normal forwards ease-in-out;
     }
+
     &.error {
       background: $red;
+      animation: error-shake 0.5s normal forwards ease-in-out;
     }
   }
 
@@ -35,20 +52,23 @@
         height: rem(40);
         outline: none;
         width: 100%;
+        background: $light;
       }
     }
 
     .actions {
       text-align: center;
+      
       button {
         cursor: pointer;
         background: $navy;
         outline: none;
-        padding: rem(10) rem(20);
+        padding: rem(20) rem(20);
         border: none;
         color: $white;
         font-weight: bold;
         font-size: rem(16);
+        width: 100%;
       }
     }
   }

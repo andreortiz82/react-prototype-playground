@@ -14,9 +14,16 @@ export default class Login extends React.Component {
 
     this.updateField = this.updateField.bind(this)
     this.login = this.login.bind(this)
+
+    console.log(this.state.isFormValid)
+  }
+
+  componentWillUpdate () {
+    // this.setState({isFormValid: null})
   }
 
   login (e) {
+    this.formState(null)
     if (this.state.username === '' || this.state.password === '') {
       this.setState({ isFormValid: false })
     } else {
@@ -34,10 +41,28 @@ export default class Login extends React.Component {
     }
   }
 
+  formState (isFormValid) {
+    switch (isFormValid) {
+      case true:
+        return 'success'
+      break;
+
+      case false:
+        return 'error'
+      break;
+
+      default:
+        return ''
+      break;
+    }
+  }
+
   render() {
     return (
       <div id="login-component">
-        <div className={`login-form ${this.state.isFormValid ? 'success' : 'error'}`}>
+        <div className={`login-form ${this.formState(this.state.isFormValid)}`}>
+          <h1>Login</h1>
+          <p>In this example, we validate the presents of value <code>onSubmit</code> and pass a <code>BOOLEAN</code> to the form updating the state object.</p>
           <form onSubmit={this.login}>
             <div className="field">
               <label>Username</label>
