@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.scss'
 
 export default class Login extends React.Component {
-  
+
   constructor (props) {
     super(props)
 
@@ -12,23 +12,23 @@ export default class Login extends React.Component {
       isFormValid: null
     }
 
+
     this.updateField = this.updateField.bind(this)
     this.login = this.login.bind(this)
-
-    console.log(this.state.isFormValid)
-  }
-
-  componentWillUpdate () {
-    // this.setState({isFormValid: null})
+    this.formState = this.formState.bind(this)
   }
 
   login (e) {
-    this.formState(null)
-    if (this.state.username === '' || this.state.password === '') {
-      this.setState({ isFormValid: false })
-    } else {
-      this.setState({ isFormValid: true })
-    }
+    this.setState({ isFormValid: null })
+
+    setTimeout(() => {
+      if (this.state.username === '' || this.state.password === '') {
+        this.setState({ isFormValid: false })
+      } else {
+        this.setState({ isFormValid: true })
+      }
+    }, 500)
+
     e.preventDefault()
   }
 
